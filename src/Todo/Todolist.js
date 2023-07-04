@@ -70,7 +70,9 @@ import Donelist from './Donelist'
     "title": "illo est ratione doloremque quia maiores aut",
     "completed": true,
     "deleted":false
-  }]
+  }
+  
+]
 class Todolist extends React.Component{
 
     constructor(props)
