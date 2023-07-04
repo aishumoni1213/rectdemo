@@ -1,24 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {BrowserRouter,Routes,Route,Link,Outlet} from 'react-router-dom'
+import Fundemo from './fundemo';
+import Counter from './counter';
+import Imagesearch from './imagesearch';
 
+import Todolist from './Todo/Todolist';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <nav>
+        <Link to="/counter">Counter</Link> <br></br>
+        <Link to="/todo">todo</Link><br></br>
+        <Link to="/imageserach">imageserach</Link>
+      </nav>
+      <Routes>
+        <Route path="counter"  element={<Counter></Counter>}></Route>
+        <Route path="todo" element={<Todolist></Todolist>}></Route>
+        <Route path="imageserach" element={<Imagesearch></Imagesearch>}></Route>
+      </Routes>
+    
+    
+    </BrowserRouter>
+    
   );
 }
 
